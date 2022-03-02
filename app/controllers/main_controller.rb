@@ -1,6 +1,7 @@
 class MainController < ApplicationController
   def index
-    @title = 'Home'
+    # flash.now[:notice] = "Welcome to the site!"
+    # flash.now[:alert] = "Invalid username or password!"
   end
     
 end
