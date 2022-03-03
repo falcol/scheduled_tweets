@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Example genarate new model
+```bash
+rails generate model User email:string password:string
+rails db:migrate
+rails c
+User.create({email: "email", password: "password", password_confirmation: "password"})
+```
 
-Things you may want to cover:
+## Change database in migrate
+```bash
+rails db:rollback
+rails db:migrate
+rails db:migrate:redo
+```
 
-* Ruby version
+## Mailer
+```bash
+rails g mailer Password reset
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Stop and see
+```bash
+ binding.irb
+```
