@@ -20,7 +20,30 @@ rails db:migrate:redo
 rails g mailer Password reset
 ```
 
-## Stop and see
+## Stop and see in code
 ```bash
  binding.irb
+```
+
+## change database
+```bash
+rails db:system:change --to=postgresql
+```
+#### after change database
+Add ```username-password``` to default in ```config/database.yml``` then run 
+```bash
+rails db:create db:migrate
+```
+
+# Deploy heroku
+### 1. Crete new app in heroku
+### 2. Connect with github
+### 3. Click deploy
+
+# When deploy if error comment ```username-password```
+
+# heroku cli
+```bash
+heroku git:remote -a <app_name>
+git push heroku master
 ```
