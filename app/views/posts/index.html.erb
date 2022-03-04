@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Posts</h1>
-
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+	<% @posts.each do |post| %>
+		<div style='border: 1px solid;'>
+			<div style="margin-left: 10px;">
+				<%= render post %>
+			</div>
+			<p style='margin-left: 10px'>
+				<%= link_to "Show this post", post %>
+			</p>
+		</div>
+	<% end %>
 </div>
-
 <%= link_to "New post", new_post_path %>
