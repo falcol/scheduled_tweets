@@ -47,3 +47,7 @@ rails db:create db:migrate
 heroku git:remote -a <app_name>
 git push heroku master
 ```
+# Run command in heroku
+```bash
+heroku run commnad_here
+```
