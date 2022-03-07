@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div>
+  <div  class="form-group">
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :poster, style: "display: block" %>
-    <%= form.text_field :poster %>
+    <%= form.text_field :poster, class: "form-control"%>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :tag, style: "display: block" %>
-    <%= form.text_field :tag %>
+    <%= form.text_field :tag, class: "form-control"%>
   </div>
-
+  <br>
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

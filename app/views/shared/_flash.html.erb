@@ -1,10 +1,12 @@
-<% if flash[:notice] %>
-	<div class="alert alert-info mt-4">
-		<%= flash[:notice].inspect %>
-	</div>
+<% if flash.any? %>
+	<% flash.each do |type, value| %>
+		<div id='flash-msg' class="alert alert-<%= type == 'notice' ? 'success' : 'danger' %> mt-4 close-div">
+			<%= value %>
+		</div>
+	<% end %>
 <% end %>
-<% if flash[:alert] %>
-	<div class="alert alert-warning mt-4">
-		<%= flash[:alert] %>
-	</div>
-<% end %>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#flash-msg').delay(3000).slideUp(300);
+	});
+</script>

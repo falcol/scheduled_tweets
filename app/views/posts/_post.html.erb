@@ -1,17 +1,9 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
-  <p>
-    <strong>Poster:</strong>
-    <%= post.poster %>
-  </p>
-
-  <p>
-    <strong>Tag:</strong>
-    <%= post.tag %>
-  </p>
-
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title">Poster: <%= post.poster %></hh5>
+			<h6 class="card-subtitle mb-2 text-muted">Tag: <%= post.tag %></h6>
+			<p class="card-text">Content: <%= post.content %></p>
+		</div>
+	</div>
 </div>
