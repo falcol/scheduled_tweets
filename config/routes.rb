@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   patch "password/reset/edit", to: "password_resets#update"
 
   get "accounts", to: "accounts#show"
+  delete "accounts/:id", to: "accounts#destroy"
 end

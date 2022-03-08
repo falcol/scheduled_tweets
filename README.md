@@ -35,6 +35,11 @@ Add ```username-password``` to default in ```config/database.yml``` then run
 rails db:create db:migrate
 ```
 
+# Add new attributes to params
+```bash
+params.require(:post).permit(:some_attribute).merge(user_id: current_user.id)
+```
+
 # Deploy heroku
 ### 1. Crete new app in heroku
 ### 2. Connect with github

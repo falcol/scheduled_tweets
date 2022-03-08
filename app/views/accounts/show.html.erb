@@ -1,13 +1,18 @@
 <%= link_to 'Go to sign in', sign_in_path , class:"btn btn-success"%>
 <hr>
 <% @accounts.each do |account| %>
-<div class="list-group">
-	<a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">User ID: <%= account.id %></h5>
-    </div>
-    <p class="mb-1">Email: <%= account.email %></p>
-  </a>
-</div>
-<br>
+	<div class="list-group">
+		<a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+			<div class="d-flex w-100 justify-content-between">
+				<h5 class="mb-1">User ID: <%= account.id %></h5>
+			</div>
+			<p class="mb-1">Email: <%= account.email %></p>
+		</a>
+		<% unless Current.user.nil?  %>
+			<% if account.id != Current.user.id %>
+				<%= button_to "Remove user", {controller: :accounts, action: :destroy, id: account.id}, method: :delete, class:'btn btn-danger' %>
+			<% end %>
+		<% end %>
+	</div>
+	<br>
 <% end %>

@@ -97,3 +97,7 @@ a {
     border-bottom-right-radius: .3rem;
   }
 }
+
+.button_to {
+  display: inline-block !important;
+}

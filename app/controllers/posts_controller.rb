@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :require_user_logged_in!, only: %i[ create update destroy new edit]
 
   # GET /posts or /posts.json
   def index
@@ -65,6 +66,11 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:content, :poster, :tag)
+      params.require(:post).permit(:content, :poster, :tag).merge(user: Current.user.id)
     end
 end
+
+
+# Thêm phân quyền -> xóa user là xóa post, người tạo post mới được thao tác với post
+
+# Key: has many, belong to -> cách tạo post
